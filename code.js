@@ -163,11 +163,6 @@ function redrawLine()
 function toggleControlPointsAddingState()
 {
 	setControlPointsAddingStatesActive(!addingControlPoints);
-	var button = document.getElementById("adding");
-	if (addingControlPoints)
-		button.innerHTML = "Stop adding control points";
-	else
-		button.innerHTML = "Start adding control points";
 }
 
 function setControlPointsAddingStatesActive(active)
@@ -175,6 +170,12 @@ function setControlPointsAddingStatesActive(active)
 	addingControlPoints = active;
 	if (addingControlPoints)
 		clearControlPoints();
+
+    var button = document.getElementById("adding");
+    if (addingControlPoints)
+        button.innerHTML = "Stop adding control points";
+    else
+        button.innerHTML = "Start adding control points";
 }
 
 function toggleLineDrawingMode()
